@@ -1,0 +1,98 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  .carousel {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  ul.slides {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    height: 600px;
+  }
+  
+  ul.slides input {
+    display: none;
+  }
+  
+  .slide-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .slide-image {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .carousel-controls label {
+    pointer-events: all;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    padding: 1rem;
+  }
+  
+  .carousel-controls label:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  .carousel-dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  input:checked + .slide-container {
+    opacity: 1;
+  }
+  
+  input#img-1:checked ~ .carousel-dots #img-dot-1,
+  input#img-2:checked ~ .carousel-dots #img-dot-2,
+  input#img-3:checked ~ .carousel-dots #img-dot-3 {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  
